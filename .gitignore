@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDES
+.vscode/
+.idea/
+
+# Mac
+.DS_Store
+
+# Brain storm specific
+.gemini/
+.agent/
