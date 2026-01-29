@@ -1,7 +1,8 @@
 from langchain_openai import ChatOpenAI
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain_core.prompts import PromptTemplate
-from tools import AI_eyes
+from tools.AI_eyes import AI_eyes
+
 from config import (
     LLM_BASE_URL,
     LLM_API_KEY,
@@ -45,13 +46,26 @@ if __name__ == "__main__":
     print("🔥 财报 Agent 已启动！(输入 q 退出)")
     print("--------------------------------------------------")
 
+    # 建一个历史对话
+    chat_history = "" 
+
     while True:
         user_input = input("你: ").strip()
         if user_input.lower() in ("q", "quit", "退出"):
             break
         
         try:
-            result = agent_executor.invoke({"input": user_input})
-            print(f"\n🤖 财报专家: {result['output']}\n")
+            # 这里的 chat_history 会对应你 config.py 里的 {chat_history} 占位符
+            result = agent_executor.invoke({
+                "input": user_input, 
+                "chat_history": chat_history
+            })     
+            
+            answer = result['output']
+            print(f"\n🤖 财报专家: {answer}\n")
+
+            # 把这一轮的对话追加到账本里，下次 invoke 就能带上了
+            chat_history += f"\nUser: {user_input}\nAI: {answer}"
+            
         except Exception as e:
             print(f"❌ 出错了: {str(e)}")

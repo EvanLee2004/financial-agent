@@ -10,7 +10,7 @@ reader = easyocr.Reader(OCR_LANGUAGES)
 @tool
 def AI_eyes(image_path: str) -> str:
     """
-    从财务报表截图中提取结构化文本信息。该工具专门用于处理清晰的财务报表图片（如资产负债表、利润表）。
+    从财务报表截图中提取结构化文本信息。该工具专门用于处理清晰的财务报表图片（如资产负债表、利润表、现金流量表等）。
 
     **工作流程与特点**：
     1.  **输入**：接收一个本地图片文件路径（支持PNG、JPG等格式）。
@@ -27,7 +27,7 @@ def AI_eyes(image_path: str) -> str:
     - 如果发生错误，将返回错误描述字符串。
 
     **使用示例**（供参考如何调用）：
-    - 用户请求："分析一下 test_data/report.png 这张资产负债表。"
+    - 用户请求："分析一下 test_data/report.png 这张财务报表。"
     - AI应调用：`AI_eyes('test_data/report.png')`
     """
     try:
