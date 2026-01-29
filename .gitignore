@@ -2,23 +2,46 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Environments
-.env
-.venv
-env/
+# Virtual Environment
+.venv/
 venv/
 ENV/
-env.bak/
-venv.bak/
+env/
 
-# IDES
-.vscode/
+# IDE
 .idea/
+.vscode/
+*.swp
+*.swo
 
-# Mac
+# OS
 .DS_Store
+Thumbs.db
 
-# Brain storm specific
-.gemini/
-.agent/
+# Environment variables
+.env
+.env.local
+
+# Test data (optional - remove if you want to track test files)
+# test_data/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
