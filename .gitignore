@@ -45,3 +45,6 @@ Thumbs.db
 
 # Jupyter Notebooks
 .ipynb_checkpoints/
+
+# 备份视觉工具目录
+tools(备选)/

@@ -3,8 +3,11 @@ langchain>=0.3.0
 langchain-core>=0.3.0
 langchain-openai>=0.2.0
 
-# HTTP 请求（用于调用视觉模型 API）
+# HTTP 请求
 requests>=2.28.0
 
-# Web UI（可选）
-streamlit>=1.30.0
+# 数据计算
+pandas>=2.2.0
+
+# LangGraph 工作流
+langgraph>=0.1.0
